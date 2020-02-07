@@ -18,7 +18,7 @@ def upload(file_list, log_file):
 		print(basename, 'zipped...')
 		with open(basename+'.zip', "r") as f:
 			file_drive = drive.CreateFile({'title': basename,
-										   'parents': [{'id': '198f5UhmF327nb82UcdfM6OKc5oV_xSvk'}]})
+										   'parents': [{'id': '#folder id'}]})
 			file_drive.SetContentFile(basename+'.zip')
 			file_drive.Upload()
 		print(basename+'.zip', 'uploaded...')
