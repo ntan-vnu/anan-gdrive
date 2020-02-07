@@ -130,3 +130,5 @@ dmypy.json
 
 *.json
 client_secrets.json
+*.zip
+*log*.txt

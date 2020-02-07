@@ -12,28 +12,33 @@ import glob
 import os
 
 def upload(file_list, log_file):
-    for fff in file_list:
-        basename = os.path.basename(fff)
-        os.system('zip -r %s.zip %s'%(basename, fff))
-        print(basename, 'zipped...')
-        with open(basename+'.zip', "r") as f:
-            file_drive = drive.CreateFile({'title': basename})
-            file_drive.SetContentFile(basename+'.zip')
-            file_drive.Upload()
-        print(basename+'.zip', 'uploaded...')
+	for fff in file_list:
+		basename = os.path.basename(fff)
+		os.system('zip -r %s.zip %s'%(basename, fff))
+		print(basename, 'zipped...')
+		with open(basename+'.zip', "r") as f:
+			file_drive = drive.CreateFile({'title': basename,
+										   'parents': [{'id': '198f5UhmF327nb82UcdfM6OKc5oV_xSvk'}]})
+			file_drive.SetContentFile(basename+'.zip')
+			file_drive.Upload()
+		print(basename+'.zip', 'uploaded...')
+		log_file.write(fff+'\n')
+		os.system('rm %s.zip'%(basename))
 
 
 IN_DIR = '/home/ntan/sdc1/nlst-ct/'
 
 if __name__ == "__main__":
-    uploaded_list = [it.strip() for it in open('log_update.txt').readlines()]
-    print(len(uploaded_list), 'uploaded...')
-    folders = [os.path.abspath(it) for it in glob.glob(IN_DIR + '*') if it not in uploaded_list]
-    folders.sort()
-    print(len(folders), 'uploading...')
+	uploaded_list = []
+	if os.path.exists('log_uploaded.txt'):
+		uploaded_list = [it.strip() for it in open('log_uploaded.txt').readlines()]
+	print(len(uploaded_list), 'uploaded...')
+	folders = [os.path.abspath(it) for it in glob.glob(IN_DIR + '*') if it not in uploaded_list]
+	folders.sort()
+	print(len(folders), 'uploading...')
 
 
-    log_file = open('log_upload.txt', 'at')
-    upload(folders, log_file)
-
-    pass
+	log_file = open('log_upload.txt', 'at')
+	upload(folders, log_file)
+	log_file.close()
+	pass
