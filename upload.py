@@ -26,7 +26,7 @@ def upload(file_list, log_file):
 		os.system('rm %s.zip'%(basename))
 
 
-IN_DIR = '/home/ntan/sdc1/nlst-ct/'
+IN_DIR = 'abc/'
 
 if __name__ == "__main__":
 	uploaded_list = []
