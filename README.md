@@ -24,8 +24,6 @@ Example:
 <ul>
     <li> Upload a file: python gdrive -u file.txt <i>[-d 1ABCDEFGHIJABCDEFGHIJABCDEFGHIJAB]</i> </li>
     <li> Upload a folder: python gdrive -r -u abc/ <i>[-d 1ABCDEFGHIJABCDEFGHIJABCDEFGHIJAB]</i>  </li>
-    <li> Download a file: python gdrive -d 1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXB 
-                                            <i>[-d /home/xyz/abc]</i> </li>
-    <li> Download a folder: python gdrive -r -d 1XXXXXXXXXXXXXXXXXXXXXXXXXXXXABCB 
-                                            <i>[-d /home/xyz/abc]</i> </li>                                            
+    <li> Download a file: python gdrive -d 1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXB <i>[-d /home/xyz/abc]</i> </li>
+    <li> Download a folder: python gdrive -r -d 1XXXXXXXXXXXXXXXXXXXXXXXXXXXXABCB <i>[-d /home/xyz/abc]</i>  </li>                                            
 </ul>
