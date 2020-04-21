@@ -51,8 +51,8 @@ Example:
 
 # Authentication through SSH
 <ol>
-  <li>Connect to server: ssh -Y [username]@[host] (other params in need)</li>
-  <li>Start a browser in server, e.g. Firefox: firefox</li>
+  <li>Connect to server: <b>ssh -Y [username]@[host]</b> (other params in need)</li>
+  <li>Start a browser in server, e.g. Firefox: <b>firefox</b></li>
   <li>The window of Firefox is mirrored in your desktop (available for Ubuntu X-server, installtation needed for MacOS)</li>
   <li>Copy the url outputed from gdrive and paste to the mirrored window</li>
   <li>Authenticate and run</li>
