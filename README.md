@@ -52,11 +52,13 @@ Example:
 # Authentication through SSH
 <ol>
   <li>Connect to server: <b>ssh -Y [username]@[host]</b> (other params in need)</li>
-  <li>Start a browser in server, e.g. Firefox: <b>firefox</b></li>
+  <li>Start a browser in server, e.g. Firefox: <b>firefox</b> in another SSH session</li>
   <li>The window of Firefox is mirrored in your desktop (available for Ubuntu X-server, installtation needed for MacOS)</li>
   <li>Copy the url outputed from gdrive and paste to the mirrored window</li>
   <li>Authenticate and run</li>
 </ol>
+
+<img src='images/authen_ssh.png'>
 
 # Notice
 This version can not download google documents, such as google doc, spreedsheet, collab, slide, etc.
