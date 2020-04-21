@@ -83,8 +83,9 @@ def download_folder(g_drive, dest_folder, folder_id):
     pass
 
 def upload_folder(g_drive, dest_folder_id, folder_name):
+    folder_name = os.path.realpath(folder_name)
     basename = os.path.basename(folder_name)
-
+    
     if dest_folder_id == None:
         m_folder = g_drive.CreateFile({'title': basename, 
                         'mimeType': 'application/vnd.google-apps.folder'})
