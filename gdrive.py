@@ -29,7 +29,7 @@ def download_file(g_drive, dest_folder, file_id):
     try:
         m_file = g_drive.CreateFile({'id': file_id})
         # json.dump(m_file, open('file_meta.json', 'w'), indent=4)
-        print(m_file)
+        # print(m_file)
         file_name = m_file['title']
         # if m_file['mimeType'] in mimetypes:
         #     m_file.GetContentFile(os.path.join(dest_folder, file_name),
