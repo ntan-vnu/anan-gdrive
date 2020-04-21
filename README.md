@@ -48,3 +48,15 @@ Example:
     <li> Download a file: python gdrive -d 1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXB <i>[-d /home/xyz/abc]</i> </li>
     <li> Download a folder: python gdrive -r -d 1XXXXXXXXXXXXXXXXXXXXXXXXXXXXABCB <i>[-d /home/xyz/abc]</i>  </li>                                            
 </ul>
+
+# Authentication through SSH
+<ol>
+  <li>Connect to server: ssh -Y [username]@[host] (other params in need)</li>
+  <li>Start a browser in server, e.g. Firefox: firefox</li>
+  <li>The window of Firefox is mirrored in your desktop (available for Ubuntu X-server, installtation needed for MacOS)</li>
+  <li>Copy the url outputed from gdrive and paste to the mirrored window</li>
+  <li>Authenticate and run</li>
+</ol>
+
+# Notice
+This version can not download google documents, such as google doc, spreedsheet, collab, slide, etc.
