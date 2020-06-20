@@ -1,6 +1,6 @@
 # Requirements
-sudo pip2 install pydrive               <br>
-sudo pip2 install httplib2==0.17.0      <br>
+cd anan-gdrive                               <br>
+pip install -r requirement.txt               <br>
 
 # Activate Google Drive API
 <ol class="arabic simple">
