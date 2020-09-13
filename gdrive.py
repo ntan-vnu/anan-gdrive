@@ -25,18 +25,18 @@ def download_file(g_drive, dest_folder, file_id):
         os.makedirs(dest_folder)
     else:
         assert dest_folder + 'existed.'
-    
     try:
         m_file = g_drive.CreateFile({'id': file_id})
         # json.dump(m_file, open('file_meta.json', 'w'), indent=4)
         # print(m_file)
         file_name = m_file['title']
+        print('Downloading:', file_name, m_file['id'])
         # if m_file['mimeType'] in mimetypes:
         #     m_file.GetContentFile(os.path.join(dest_folder, file_name),
         #                                 mimetype=mimetypes[m_file['mimetype']])
         # else:
         m_file.GetContentFile(os.path.join(dest_folder, file_name))
-        print(file_name, m_file['id'])
+        print('Finished:', file_name, m_file['id'])
     except:
         print('Fail to download [' + file_name + '] [' + file_id + '] to ' + dest_folder)
     pass
@@ -57,8 +57,7 @@ def upload_file(g_drive, dest_folder_id, file_name):
 
 def download_folder(g_drive, dest_folder, folder_id):
     file_list = g_drive.ListFile({'q': "'%s' in parents and trashed=false"%(folder_id)}).GetList()
-    file_list.sort()
-    
+
     if dest_folder == None:
         dest_folder = './'
     folder_name = g_drive.CreateFile({'id': folder_id})['title']
@@ -126,9 +125,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     #Login to Google Drive and create drive object
-    g_login = GoogleAuth()
-    g_login.LocalWebserverAuth()
-    g_drive = GoogleDrive(g_login)
+    g_auth = GoogleAuth()
+    auth_url = g_auth.GetAuthUrl()
+    print(auth_url)
+    code = input("Enter code: ")
+    g_auth.Auth(code)
+    g_drive = GoogleDrive(g_auth)
 
 
     if args.recursive:
