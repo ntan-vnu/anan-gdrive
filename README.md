@@ -1,4 +1,5 @@
 # Requirements
+python2
 cd anan-gdrive                               <br>
 pip install -r requirement.txt               <br>
 
